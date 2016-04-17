@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup Label="ProjectConfigurations">
+        <ProjectConfiguration Include="Debug|Win32">
+            <Configuration>Debug</Configuration>
+            <Platform>Win32</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Release|Win32">
+            <Configuration>Release</Configuration>
+            <Platform>Win32</Platform>
+        </ProjectConfiguration>
+    </ItemGroup>
+    <PropertyGroup Label="Globals">
+        <ProjectGuid>{0DFA0126-C8DB-42D4-9503-C6DE20BD9FDF}</ProjectGuid>
+        <Keyword>Win32Proj</Keyword>
+        <RootNamespace>libyuvofficialDemo</RootNamespace>
+    </PropertyGroup>
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;" Label="Configuration">
+        <ConfigurationType>Application</ConfigurationType>
+        <UseDebugLibraries>true</UseDebugLibraries>
+        <PlatformToolset>v120</PlatformToolset>
+        <CharacterSet>Unicode</CharacterSet>
+    </PropertyGroup>
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;" Label="Configuration">
+        <ConfigurationType>Application</ConfigurationType>
+        <UseDebugLibraries>false</UseDebugLibraries>
+        <PlatformToolset>v120</PlatformToolset>
+        <WholeProgramOptimization>true</WholeProgramOptimization>
+        <CharacterSet>Unicode</CharacterSet>
+    </PropertyGroup>
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
+    <ImportGroup Label="ExtensionSettings"/>
+    <ImportGroup Label="PropertySheets" Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">
+        <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" Label="LocalAppDataPlatform"/>
+    </ImportGroup>
+    <ImportGroup Label="PropertySheets" Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
+        <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" Label="LocalAppDataPlatform"/>
+    </ImportGroup>
+    <PropertyGroup Label="UserMacros"/>
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">
+        <LinkIncremental>true</LinkIncremental>
+    </PropertyGroup>
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
+        <LinkIncremental>false</LinkIncremental>
+    </PropertyGroup>
+    <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">
+        <ClCompile>
+            <PrecompiledHeader/>
+            <WarningLevel>Level3</WarningLevel>
+            <Optimization>Disabled</Optimization>
+            <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+            <SDLCheck>true</SDLCheck>
+            <AdditionalIncludeDirectories>..\libyuv\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <SubSystem>Console</SubSystem>
+            <GenerateDebugInformation>true</GenerateDebugInformation>
+            <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+    <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
+        <ClCompile>
+            <WarningLevel>Level3</WarningLevel>
+            <PrecompiledHeader/>
+            <Optimization>MaxSpeed</Optimization>
+            <FunctionLevelLinking>true</FunctionLevelLinking>
+            <IntrinsicFunctions>true</IntrinsicFunctions>
+            <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+            <SDLCheck>true</SDLCheck>
+            <AdditionalIncludeDirectories>..\libyuv\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <SubSystem>Console</SubSystem>
+            <GenerateDebugInformation>true</GenerateDebugInformation>
+            <EnableCOMDATFolding>true</EnableCOMDATFolding>
+            <OptimizeReferences>true</OptimizeReferences>
+            <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+    <ItemGroup>
+        <ClCompile Include="..\libyuv\source\compare.cc"/>
+        <ClCompile Include="..\libyuv\source\compare_common.cc"/>
+        <ClCompile Include="..\libyuv\source\compare_gcc.cc"/>
+        <ClCompile Include="..\libyuv\source\compare_neon.cc"/>
+        <ClCompile Include="..\libyuv\source\compare_win.cc"/>
+        <ClCompile Include="..\libyuv\source\convert.cc"/>
+        <ClCompile Include="..\libyuv\source\convert_argb.cc"/>
+        <ClCompile Include="..\libyuv\source\convert_from.cc"/>
+        <ClCompile Include="..\libyuv\source\convert_from_argb.cc"/>
+        <ClCompile Include="..\libyuv\source\convert_jpeg.cc"/>
+        <ClCompile Include="..\libyuv\source\convert_to_argb.cc"/>
+        <ClCompile Include="..\libyuv\source\convert_to_i420.cc"/>
+        <ClCompile Include="..\libyuv\source\cpu_id.cc"/>
+        <ClCompile Include="..\libyuv\source\mjpeg_decoder.cc"/>
+        <ClCompile Include="..\libyuv\source\mjpeg_validate.cc"/>
+        <ClCompile Include="..\libyuv\source\planar_functions.cc"/>
+        <ClCompile Include="..\libyuv\source\rotate.cc"/>
+        <ClCompile Include="..\libyuv\source\rotate_argb.cc"/>
+        <ClCompile Include="..\libyuv\source\rotate_mips.cc"/>
+        <ClCompile Include="..\libyuv\source\rotate_neon.cc"/>
+        <ClCompile Include="..\libyuv\source\row_any.cc"/>
+        <ClCompile Include="..\libyuv\source\row_common.cc"/>
+        <ClCompile Include="..\libyuv\source\row_gcc.cc"/>
+        <ClCompile Include="..\libyuv\source\row_mips.cc"/>
+        <ClCompile Include="..\libyuv\source\row_neon.cc"/>
+        <ClCompile Include="..\libyuv\source\row_win.cc"/>
+        <ClCompile Include="..\libyuv\source\scale.cc"/>
+        <ClCompile Include="..\libyuv\source\scale_any.cc"/>
+        <ClCompile Include="..\libyuv\source\scale_argb.cc"/>
+        <ClCompile Include="..\libyuv\source\scale_common.cc"/>
+        <ClCompile Include="..\libyuv\source\scale_gcc.cc"/>
+        <ClCompile Include="..\libyuv\source\scale_mips.cc"/>
+        <ClCompile Include="..\libyuv\source\scale_neon.cc"/>
+        <ClCompile Include="..\libyuv\source\scale_win.cc"/>
+        <ClCompile Include="..\libyuv\source\video_common.cc"/>
+        <ClCompile Include="util\convertDemo.cc"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ClInclude Include="..\libyuv\include\libyuv.h"/>
+    </ItemGroup>
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
+    <ImportGroup Label="ExtensionTargets"/>
+</Project>
